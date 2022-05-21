@@ -37,7 +37,9 @@ public class S0685_CreateRefund
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",refund);
 		driver.executeScript("arguments[0].click();", refund);
-		driver.findElement(By.xpath("//div[@title='New']")).click();
+		WebElement newRefund=driver.findElement(By.xpath("(//a[@class='forceActionLink'])[2]"));
+		js.executeScript("arguments[0].scrollIntoView(true);",newRefund);
+		driver.executeScript("arguments[0].click();", newRefund);
 		driver.findElement(By.xpath("//input[@title='Search Accounts']")).click();
 		driver.findElement(By.xpath("(//div[@title='Ramkumar'])[2]")).click();
 		driver.findElement(By.xpath("//a[text()='--None--']")).click();
@@ -45,7 +47,10 @@ public class S0685_CreateRefund
 		driver.findElement(By.xpath("(//input[@type='text'])[4]")).sendKeys("5000");
 		driver.findElement(By.xpath("(//a[text()='--None--'])[1]")).click();
 		driver.findElement(By.xpath("//a[@title='Referenced']")).click();
-		driver.findElement(By.xpath("(//a[text()='--None--'])[2]")).click();
-		driver.findElement(By.xpath("//a[@title='External']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//a[text()='--None--'])[1]")).click();
+		
+		//driver.findElement(By.xpath("//a[@title='External']")).click();
+		//js.executeScript("window.scrollTo(0,document.body.scrollHeight);",driver);	
 	}
 }
