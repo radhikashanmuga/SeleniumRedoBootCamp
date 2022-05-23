@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="24520" started-at="2022-05-21T22:04:01 IST" finished-at="2022-05-21T22:04:26 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="24520" started-at="2022-05-21T22:04:01 IST" finished-at="2022-05-21T22:04:26 IST">
+      <class name="sprint1.S0685_CreateRefund">
+        <test-method status="PASS" signature="CreateRefundtest()[pri:0, instance:sprint1.S0685_CreateRefund@69b2283a]" name="CreateRefundtest" duration-ms="24476" started-at="2022-05-21T22:04:01 IST" finished-at="2022-05-21T22:04:26 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateRefundtest -->
+      </class> <!-- sprint1.S0685_CreateRefund -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
