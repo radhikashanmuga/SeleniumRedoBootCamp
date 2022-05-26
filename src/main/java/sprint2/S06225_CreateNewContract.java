@@ -1,6 +1,7 @@
 package sprint2;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -42,27 +43,35 @@ public class S06225_CreateNewContract
 		driver.findElement(By.xpath("(//mark[text()='Contracts'])[1]")).click();
 		//4. Click on the Dropdown icon in the Contract tab
 		
-		driver.findElement(By.xpath("(//a[@role='button'])[17])")).click();
-		//
-		//driver.findElement(By.xpath("(//a[@title='Contracts']//following::lightning-icon)[1]")).click();
+		driver.findElement(By.xpath("(//a[@title='Contracts']//following::lightning-primitive-icon)[1]")).click();
+		Thread.sleep(3000);
 		//5. Click on New Contract
-		/*WebElement newContract=driver.findElement(By.xpath("//span[text()='New Contract']"));
-		WebElement newContract=driver.findElement(By.xpath("//div[@title='New']"));
+		WebElement newContract=driver.findElement(By.xpath("//span[text()='New Contract']"));
+		
 		driver.executeScript("arguments[0].click();", newContract);
+		
 		//6. Select the accounts listed on the'Account Name' field
-		driver.findElement(By.xpath("//input[@placeholder='Search Accounts...']")).click();
+		driver.findElement(By.xpath("//input[@title='Search Accounts']")).click();
 		driver.findElement(By.xpath("(//div[@title='Your Name'])[1]")).click();
-		//7.Select the Contract Start Date as Tommorow's Date*/
-		SimpleDateFormat dnt = new SimpleDateFormat("dd/MM/yy :: HH:mm:ss");
-        Date date = new Date();
-        System.out.println("Today Date & Time at Now :"+dnt.format(date));
-		//driver.findElement(By.xpath("//a[@class='datePicker-openIcon display']")).click();
+		//7.Select the Contract Start Date as Tommorow's Date
+		Date dt=new Date();
+		Calendar calendar=Calendar.getInstance();
+		calendar.add(Calendar.DATE, 1);
+		dt=calendar.getTime();
+		String tomorrowDate=new SimpleDateFormat("MM/dd/yyyy").format(dt);
+		WebElement tomDate=driver.findElement(By.xpath("(//input[@class=' input'])[1]"));
+		tomDate.sendKeys(tomorrowDate);
 		//8.Enter Contract Term (months) as' 6 '
+		
+		driver.findElement(By.xpath("(//input[@type='text'])[5]")).sendKeys("6");
+		
 		//9.Click save and Verify the Contract Name
+		driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
+		
+		
 		//10.Get the Contract number
 		//11.Get the difference between  the Contract Start Date and End Date and Check it matches the Contract Term.
-		//Expected Result:
-		//The new Contract is created Successfully
+		
 
 	}
 
