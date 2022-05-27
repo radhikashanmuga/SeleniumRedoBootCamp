@@ -42,19 +42,22 @@ public class S06227_DeleteContract
 		//5. Search the Account number in the Search box
 		WebElement search=driver.findElement(By.xpath("(//input[@type='search'])[2]"));
 		search.click();
-		search.sendKeys("00000111");
+		search.sendKeys("00000110");
 		Thread.sleep(3000);
 		search.sendKeys(Keys.ENTER);
-		
+		String actualResult=driver.findElement(By.xpath("(//input[@type='search'])[2]")).getText();
+		System.out.println(actualResult);
 		WebElement closebox=driver.findElement(By.xpath("//span[@class='countSortedByFilteredBy']"));
 		closebox.click();
 		
-		//6.Click on the Dropdown icon and Select Delete
+		/*6.Click on the Dropdown icon and Select Delete
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[@class='slds-icon_container slds-icon-utility-down']")).click();
 		driver.findElement(By.xpath("//a[@title='Delete']")).click();
 		//7.Click on the Delete option in the displayed popup window.
+		driver.findElement(By.xpath("//span[text()='Delete']")).click();*/
 		//8. Verify Whether Contract is Deleted using  Contract number
+		
 	}
 
 }
