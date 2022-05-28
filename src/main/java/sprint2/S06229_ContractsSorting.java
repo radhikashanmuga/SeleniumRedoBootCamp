@@ -6,11 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S06229_ContractsSorting 
+public class S06229_ContractsSorting extends BaseClass
 {
-	public static void main(String[] args) throws InterruptedException 
+	public void contractSorting() throws InterruptedException 
 	{
 		//1. Login to https://login.salesforce.com
 		

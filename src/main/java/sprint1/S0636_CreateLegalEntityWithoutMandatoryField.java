@@ -9,10 +9,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class S0636_CreateLegalEntityWithoutMandatoryField {
+public class S0636_CreateLegalEntityWithoutMandatoryField extends BaseClass
+{
 
 	@Test
 	public void testMandatoryField()

@@ -9,9 +9,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S0638_DeleteLegalEntity {
+public class S0638_DeleteLegalEntity extends BaseClass
+{
 	
 	@Test
 	public void deleteLegalEntity() throws InterruptedException

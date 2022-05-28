@@ -4,14 +4,16 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
+import org.testng.annotations.Test;
+import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S0630_CreateAccount 
+public class S0630_CreateAccount extends BaseClass
 {
-	public static void main(String[] args) 
+	@Test
+	public void createAccount() 
 	{
-		//Download the chrome driver and set the path
+		/*//Download the chrome driver and set the path
 		WebDriverManager.chromedriver().setup();
 		
 		
@@ -27,7 +29,7 @@ public class S0630_CreateAccount
 		driver.findElement(By.id("username")).sendKeys("mars@testleaf.com");
 		driver.findElement(By.id("password")).sendKeys("BootcampSel$123");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.findElement(By.id("Login")).click();
+		driver.findElement(By.id("Login")).click();*/
 		
 		
 		//Click on toggle menu button from the left corner

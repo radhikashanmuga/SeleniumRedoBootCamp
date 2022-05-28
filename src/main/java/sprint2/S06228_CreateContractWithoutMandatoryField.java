@@ -10,12 +10,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
+import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S06228_CreateContractWithoutMandatoryField 
+public class S06228_CreateContractWithoutMandatoryField extends BaseClass
 {
-	public static void main(String[] args) throws InterruptedException 
+	@Test
+	public void contractwithoutMandfield() throws InterruptedException 
 	{
 		//1. Login to https://login.salesforce.com
 		WebDriverManager.chromedriver().setup();

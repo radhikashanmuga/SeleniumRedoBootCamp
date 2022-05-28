@@ -9,12 +9,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
+import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S06225_CreateNewContract 
+public class S06225_CreateNewContract extends BaseClass
 {
-	public static void main(String[] args) throws InterruptedException 
+	@Test
+	public void createContract() throws InterruptedException
 	{
 		//1. Login to https://login.salesforce.com
 		
