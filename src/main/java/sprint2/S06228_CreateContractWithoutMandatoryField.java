@@ -1,22 +1,23 @@
 package sprint2;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S06227_DeleteContract 
+public class S06228_CreateContractWithoutMandatoryField 
 {
 	public static void main(String[] args) throws InterruptedException 
 	{
 		//1. Login to https://login.salesforce.com
 		WebDriverManager.chromedriver().setup();
-		
 		//Handle Notifications
 		ChromeOptions options=new ChromeOptions();
 		options.addArguments("--disable-notifications");
@@ -35,27 +36,31 @@ public class S06227_DeleteContract
 		driver.findElement(By.xpath("//input[@placeholder='Search apps or items...']")).sendKeys("Contracts");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//mark[text()='Contracts'])[1]")).click();
-		//4. Click the Contract tab
-		driver.findElement(By.xpath("(//span[text()='Contracts'])[1]")).click();
-		driver.findElement(By.xpath("//div[@class='slds-page-header__name-switcher']")).click();
-		driver.findElement(By.xpath("//span[text()='All Contracts']")).click();
-		//5. Search the Account number in the Search box
-		WebElement search=driver.findElement(By.xpath("(//input[@type='search'])[2]"));
-		search.click();
-		search.sendKeys("00000110");
+		//4. Click on the Dropdown icon in the Contract tab
+		driver.findElement(By.xpath("(//a[@title='Contracts']//following::lightning-primitive-icon)[1]")).click();
 		Thread.sleep(3000);
-		search.sendKeys(Keys.ENTER);
-		WebElement closebox=driver.findElement(By.xpath("//span[@class='countSortedByFilteredBy']"));
-		closebox.click();
-		
-		//6.Click on the Dropdown icon and Select Delete
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[@class='slds-icon_container slds-icon-utility-down']")).click();
-		driver.findElement(By.xpath("//a[@title='Delete']")).click();
-		//7.Click on the Delete option in the displayed popup window.
-		driver.findElement(By.xpath("//span[text()='Delete']")).click();
-		//8. Verify Whether Contract is Deleted using  Contract number
-		
+		//5. Click on New Contract
+		WebElement newContract=driver.findElement(By.xpath("//span[text()='New Contract']"));
+		driver.executeScript("arguments[0].click();", newContract);
+		//6. Select the accounts listed on the'Account Name' field
+		driver.findElement(By.xpath("//input[@title='Search Accounts']")).click();
+		driver.findElement(By.xpath("(//div[@title='Your Name'])[1]")).click();
+		//7.Select the Contract Start Date as Tommorow's Date
+		Date dt=new Date();
+		Calendar calendar=Calendar.getInstance();
+		calendar.add(Calendar.DATE, 1);
+		dt=calendar.getTime();
+		String tomorrowDate=new SimpleDateFormat("MM/dd/yyyy").format(dt);
+		WebElement tomDate=driver.findElement(By.xpath("(//input[@class=' input'])[1]"));
+		tomDate.sendKeys(tomorrowDate);
+		//8.Click save
+		driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
+		//9.Verify the Alert message(These required fields must be completed: Contract Term (months))
+		String actualResult=driver.findElement(By.xpath("//span[text()='Review the errors on this page.']")).getText();
+		System.out.println(actualResult);
+
+			
+
 	}
 
 }
