@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -58,9 +59,7 @@ public class S06228_CreateContractWithoutMandatoryField
 		//9.Verify the Alert message(These required fields must be completed: Contract Term (months))
 		String actualResult=driver.findElement(By.xpath("//span[text()='Review the errors on this page.']")).getText();
 		System.out.println(actualResult);
-
-			
-
+		String expectedResult="Review the errors on this page.";
+		Assert.assertEquals(actualResult, expectedResult);
 	}
-
 }
