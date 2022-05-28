@@ -36,7 +36,7 @@ public class S06227_DeleteContract
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//mark[text()='Contracts'])[1]")).click();
 		//4. Click the Contract tab
-		driver.findElement(By.xpath("(//span[text()='Contracts'])[1]")).click();
+		//driver.findElement(By.xpath("(//span[text()='Contracts'])[1]")).click();
 		driver.findElement(By.xpath("//div[@class='slds-page-header__name-switcher']")).click();
 		driver.findElement(By.xpath("//span[text()='All Contracts']")).click();
 		//5. Search the Account number in the Search box

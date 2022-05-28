@@ -39,11 +39,12 @@ public class S06225_CreateNewContract
 		//3. Click View All and click 'Contract' from App Launcher
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		driver.findElement(By.xpath("//input[@placeholder='Search apps or items...']")).sendKeys("Contracts");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("(//mark[text()='Contracts'])[1]")).click();
 		//4. Click on the Dropdown icon in the Contract tab
-		
-		driver.findElement(By.xpath("(//a[@title='Contracts']//following::lightning-primitive-icon)[1]")).click();
+		Thread.sleep(10000);
+		//driver.findElement(By.xpath("(//a[@title='Contracts']//following::lightning-primitive-icon)[1]")).click();
+		driver.findElement(By.xpath("(//span[text()='Contracts'])[1]/following::a[1]")).click();
 		Thread.sleep(3000);
 		//5. Click on New Contract
 		WebElement newContract=driver.findElement(By.xpath("//span[text()='New Contract']"));
