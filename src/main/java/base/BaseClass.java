@@ -21,7 +21,7 @@ public class BaseClass
 		ChromeOptions options=new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		//Login to https://login.salesforce.com- mars@testleaf.com, BootcampSel$123
-		 driver=new ChromeDriver();
+		 driver=new ChromeDriver(options);
 		driver.get("https://login.salesforce.com");
 		driver.manage().window().maximize();
 		driver.findElement(By.id("username")).sendKeys("mars@testleaf.com");
