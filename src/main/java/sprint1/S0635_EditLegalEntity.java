@@ -1,10 +1,13 @@
 package sprint1;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,8 +27,8 @@ public class S0635_EditLegalEntity extends BaseClass
 		driver.findElement(By.xpath("//input[@placeholder='Search apps or items...']")).sendKeys("Legal Entities");
 		driver.findElement(By.xpath("//p[@class=\"slds-truncate\"]")).click();
 		driver.findElement(By.xpath("//input[@name='LegalEntity-search-input']")).sendKeys("Salesforce Automation By Radhika");
-		Thread.sleep(3000);
-		WebElement editLegalEntity = driver.findElement(By.xpath("(//a[@role='button'])[19]")); 
+		WebElement editLegalEntity=new WebDriverWait(driver,Duration.ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[@role='button'])[19]")));
+		//WebElement editLegalEntity = driver.findElement(By.xpath("(//a[@role='button'])[19]")); 
 		driver.executeScript("arguments[0].click();", editLegalEntity);	
 		WebElement dropdown=driver.findElement(By.xpath("//a[@title='Edit']"));
 		driver.executeScript("arguments[0].click();", dropdown);

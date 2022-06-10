@@ -1,85 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
-  <test thread-count="5" name="Test(failed)" parallel="classes">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sprint2.S0685_CreateRefund">
-        <methods>
-          <include name="CreateRefundtest"/>
-          <include name="launchBrowser"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint2.S0685_CreateRefund -->
-      <class name="sprint1.S0634_CreateLegalEntity">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="testLegalEntity"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint1.S0634_CreateLegalEntity -->
-      <class name="sprint1.S0636_CreateLegalEntityWithoutMandatoryField">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="testMandatoryField"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint1.S0636_CreateLegalEntityWithoutMandatoryField -->
-      <class name="sprint2.S06226_EditContract">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="editContract"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint2.S06226_EditContract -->
-      <class name="sprint2.S06227_DeleteContract">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="deleteContract"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint2.S06227_DeleteContract -->
-      <class name="sprint2.S06228_CreateContractWithoutMandatoryField">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="contractwithoutMandfield"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint2.S06228_CreateContractWithoutMandatoryField -->
       <class name="sprint1.S0630_CreateAccount">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="createAccount"/>
           <include name="closeBrowser"/>
+          <include name="launchBrowser"/>
+          <include name="createAccount" invocation-numbers="0 0 0 0"/>
         </methods>
       </class> <!-- sprint1.S0630_CreateAccount -->
-      <class name="sprint1.S0635_EditLegalEntity">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="testEditLegalEntity"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint1.S0635_EditLegalEntity -->
-      <class name="sprint1.S0638_DeleteLegalEntity">
-        <methods>
-          <include name="deleteLegalEntity"/>
-          <include name="launchBrowser"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint1.S0638_DeleteLegalEntity -->
-      <class name="sprint1.S0637_VerifyLegalEntitiessortByLastModifiedDate">
-        <methods>
-          <include name="sorting"/>
-          <include name="launchBrowser"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint1.S0637_VerifyLegalEntitiessortByLastModifiedDate -->
-      <class name="sprint2.S06225_CreateNewContract">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="createContract"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- sprint2.S06225_CreateNewContract -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
