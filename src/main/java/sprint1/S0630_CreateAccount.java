@@ -71,7 +71,7 @@ public class S0630_CreateAccount extends ReaddatafromExcel
 		driver.findElement(By.xpath("//span[@title='Public']")).click();
 		//Click save and verify Account name
 		driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
-		WebElement accountCreate=driver.findElement(By.xpath("//div[@title='\"Manjula\"']"));
+		WebElement accountCreate=driver.findElement(By.xpath("//div[@title='\"Radhika\"']"));
 		String actualResult=accountCreate.getText();
 		System.out.println(actualResult);
 		String expectedTitle="Radhika";
