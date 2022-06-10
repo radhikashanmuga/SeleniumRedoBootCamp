@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sprint1.S0630_CreateAccount">
+      <class name="sprint1.S0634_CreateLegalEntity">
         <methods>
-          <include name="closeBrowser"/>
           <include name="launchBrowser"/>
-          <include name="createAccount" invocation-numbers="0 0 0 0"/>
+          <include name="testLegalEntity" invocation-numbers="0 0 0 0"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- sprint1.S0630_CreateAccount -->
+      </class> <!-- sprint1.S0634_CreateLegalEntity -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
