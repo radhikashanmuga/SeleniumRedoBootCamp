@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="45654" started-at="2022-06-11T12:52:53 IST" finished-at="2022-06-11T12:53:39 IST">
+  <suite name="Default suite" duration-ms="23094" started-at="2022-06-11T15:47:52 IST" finished-at="2022-06-11T15:48:15 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="45654" started-at="2022-06-11T12:52:53 IST" finished-at="2022-06-11T12:53:39 IST">
-      <class name="sprint1.AssessmentSalesforce">
-        <test-method status="FAIL" signature="assessement(java.lang.String, java.lang.String)[pri:0, instance:sprint1.AssessmentSalesforce@72a7c7e0]" name="assessement" duration-ms="45089" started-at="2022-06-11T12:52:54 IST" data-provider="excelDataProvider" finished-at="2022-06-11T12:53:39 IST">
+    <test name="Default test" duration-ms="23094" started-at="2022-06-11T15:47:52 IST" finished-at="2022-06-11T15:48:15 IST">
+      <class name="sprint1.S0634_CreateLegalEntity">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:sprint1.S0634_CreateLegalEntity@10e41621]" name="launchBrowser" is-config="true" duration-ms="3919" started-at="2022-06-11T15:47:52 IST" finished-at="2022-06-11T15:47:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="testLegalEntity(java.lang.String, java.lang.String)[pri:0, instance:sprint1.S0634_CreateLegalEntity@10e41621]" name="testLegalEntity" duration-ms="14330" started-at="2022-06-11T15:47:56 IST" data-provider="excelDataProvider" finished-at="2022-06-11T15:48:10 IST">
           <params>
             <param index="0">
               <value>
@@ -20,78 +24,14 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='dashboardNameInput']"}
-  (Session info: chrome=102.0.5005.63)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'
-System info: host: 'LAPTOP-41KTQ5SV', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\radhi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:65041}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f5a2f9b93962c80706cfb553a1e3573e
-*** Element info: {Using=xpath, value=//input[@id='dashboardNameInput']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='dashboardNameInput']"}
-  (Session info: chrome=102.0.5005.63)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'
-System info: host: 'LAPTOP-41KTQ5SV', ip: '192.168.1.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\radhi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:65041}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f5a2f9b93962c80706cfb553a1e3573e
-*** Element info: {Using=xpath, value=//input[@id='dashboardNameInput']}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:196)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:129)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:333)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:451)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:394)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:325)
-at sprint1.AssessmentSalesforce.assessement(AssessmentSalesforce.java:62)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assessement -->
-      </class> <!-- sprint1.AssessmentSalesforce -->
+        </test-method> <!-- testLegalEntity -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:sprint1.S0634_CreateLegalEntity@10e41621]" name="closeBrowser" is-config="true" duration-ms="4160" started-at="2022-06-11T15:48:10 IST" finished-at="2022-06-11T15:48:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- sprint1.S0634_CreateLegalEntity -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

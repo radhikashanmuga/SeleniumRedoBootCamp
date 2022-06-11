@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -59,11 +60,12 @@ public class AssessmentSalesforce
 		
 		driver.findElement(By.xpath("//a[@title='New Dashboard']")).click();
 		//9. Enter the Dashboard name as "YourName_Workout"
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@id='dashboardNameInput']")).sendKeys("Radhika_Workout");
 		//10. Enter Description as Testing and Click on Create
-		driver.findElement(By.xpath("//input[@id='dashboardDescriptionInput']")).sendKeys("Testing");
+		//driver.findElement(By.xpath("//input[@id='dashboardDescriptionInput']")).sendKeys("Testing");
 		//11. Click on Create
-		driver.findElement(By.xpath("//input[@id=submitBtn']")).click();
+		//driver.findElement(By.xpath("//input[@id=submitBtn']")).click();
 		//12. Click on Done
 		
 		

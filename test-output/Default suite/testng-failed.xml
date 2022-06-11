@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sprint1.AssessmentSalesforce">
+      <class name="sprint1.S0634_CreateLegalEntity">
         <methods>
-          <include name="assessement" invocation-numbers="0"/>
+          <include name="launchBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="testLegalEntity" invocation-numbers="0"/>
         </methods>
-      </class> <!-- sprint1.AssessmentSalesforce -->
+      </class> <!-- sprint1.S0634_CreateLegalEntity -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
