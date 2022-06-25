@@ -11,16 +11,39 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utilities.ReaddatafromExcel;
 
 public class S0637_VerifyLegalEntitiessortByLastModifiedDate extends BaseClass
 {	
-	@Test
-	public void sorting() throws InterruptedException, ParseException 
+	public static ChromeDriver driver;
+	public String data;
+	public ReaddatafromExcel readdata=new ReaddatafromExcel();
+	public String excelSheetName="data";
+	
+	@BeforeTest
+	public void launchBrowser()
+	{
+		WebDriverManager.chromedriver().setup();
+		//Handle Notifications
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("--disable-notifications");
+		//Login to https://login.salesforce.com- mars@testleaf.com, BootcampSel$123
+		driver=new ChromeDriver(options);
+		driver.get("https://login.salesforce.com");
+		driver.manage().window().maximize();	
+	}
+	@Test(dataProvider="excelDataProvider")
+	public void sorting(String username, String password) throws InterruptedException, ParseException 
 	{	
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElement(By.id("Login")).click();	
 			//Click on toggle menu button from the left corner	
 			driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
 			//Click view All and click Sales from App Launcher

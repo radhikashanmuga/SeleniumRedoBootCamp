@@ -17,6 +17,16 @@ public class S06227_DeleteContract extends BaseClass
 	@Test
 	public void deleteContract() throws InterruptedException 
 	{
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("--disable-notifications");
+		ChromeDriver driver=new ChromeDriver(options);
+		driver.get("https://login.salesforce.com");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("username")).sendKeys("mars@testleaf.com");
+		driver.findElement(By.id("password")).sendKeys("BootcampSel$123");
+		driver.findElement(By.id("Login")).click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		//2. Click on the toggle menu button from the left corner
 		driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
 		//3. Click View All and click 'Contract' from App Launcher
@@ -44,7 +54,14 @@ public class S06227_DeleteContract extends BaseClass
 		//7.Click on the Delete option in the displayed popup window.
 		driver.findElement(By.xpath("//span[text()='Delete']")).click();
 		//8. Verify Whether Contract is Deleted using  Contract number
-		
+		WebElement tMes=driver.findElement(By.xpath("//span[@data-aura-class='forceActionsText']"));
+		String actual=tMes.getText();
+		System.out.println(actual);
+		String expected="deleted";
+		if(actual.contains(expected))
+			System.out.println("Data is Deleted");
+		else
+			System.out.println("Data is not Deleted");
 	}
 
 }

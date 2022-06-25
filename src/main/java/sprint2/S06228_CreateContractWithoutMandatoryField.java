@@ -15,11 +15,22 @@ import org.testng.annotations.Test;
 import base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class S06228_CreateContractWithoutMandatoryField extends BaseClass
+public class S06228_CreateContractWithoutMandatoryField
 {
 	@Test
 	public void contractwithoutMandfield() throws InterruptedException 
 	{
+		
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("--disable-notifications");
+		ChromeDriver driver=new ChromeDriver(options);
+		driver.get("https://login.salesforce.com");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("username")).sendKeys("mars@testleaf.com");
+		driver.findElement(By.id("password")).sendKeys("BootcampSel$123");
+		driver.findElement(By.id("Login")).click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		//2. Click on the toggle menu button from the left corner
 		driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
 		//3. Click View All and click 'Contract' from App Launcher
@@ -35,7 +46,7 @@ public class S06228_CreateContractWithoutMandatoryField extends BaseClass
 		driver.executeScript("arguments[0].click();", newContract);
 		//6. Select the accounts listed on the'Account Name' field
 		driver.findElement(By.xpath("//input[@title='Search Accounts']")).click();
-		driver.findElement(By.xpath("(//div[@title='Your Name'])[1]")).click();
+		driver.findElement(By.xpath("(//div[@title='Test'])[1]")).click();
 		//7.Select the Contract Start Date as Tommorow's Date
 		Date dt=new Date();
 		Calendar calendar=Calendar.getInstance();
